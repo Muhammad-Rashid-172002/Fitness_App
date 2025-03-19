@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout2.dart';
 import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout3.dart';
 import 'package:fitness/Views/Auth_Modules/Home/work_outs/workout1.dart';
 import 'package:fitness/Views/Auth_Modules/Sigin.dart';
@@ -192,6 +193,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        AppBar(title: Text('Profile'), backgroundColor: Colors.blue),
+        SizedBox(height: 20),
         Stack(
           children: [
             CircleAvatar(
@@ -223,11 +226,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: TextStyle(fontSize: 15, color: Colors.grey),
         ),
         SizedBox(height: 20),
-        ListTile(
-          leading: Icon(Icons.person),
-          title: Text('Edit Profile'),
-          trailing: Icon(Icons.arrow_forward_ios),
-        ),
+
         ListTile(
           leading: Icon(Icons.logout),
           trailing: Icon(Icons.arrow_forward_ios),
@@ -239,16 +238,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           trailing: Icon(Icons.arrow_forward_ios),
           title: Text('Delete Account'),
           onTap: () => _confirmDeleteAccount(context),
-        ),
-        ListTile(
-          leading: Icon(Icons.settings),
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Settings'),
-        ),
-        ListTile(
-          leading: Icon(Icons.info),
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Version'),
         ),
       ],
     );
@@ -272,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'title': 'Strength Builder',
       'image': 'assets/images/images (2).jpeg',
-      'page': Workout1(),
+      'page': Workout2(),
     },
     {
       'title': 'Core & Stability',
@@ -289,8 +278,9 @@ class _HomeScreenState extends State<HomeScreen> {
         Expanded(
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1,
+              crossAxisCount: 2,
               mainAxisSpacing: 15,
+              crossAxisSpacing: 15,
             ),
             itemCount: 3,
             scrollDirection: Axis.vertical,
@@ -314,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        height: 280,
+                        height: 138,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                         ),
