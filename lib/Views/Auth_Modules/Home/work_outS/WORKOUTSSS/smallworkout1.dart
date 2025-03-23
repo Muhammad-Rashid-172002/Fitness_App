@@ -41,7 +41,7 @@ class _Smallworkout1State extends State<Smallworkout1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Jumping Jack'),
+        title: const Text('Burpees'),
         backgroundColor: Colors.blue,
       ),
       body: Column(

@@ -1,7 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness/Views/Auth_Modules/Home/Splash_Screen/Splash_Screen.dart';
-import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout2.dart';
-//import 'package:fitness/Views/Auth_Modules/Sigin.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

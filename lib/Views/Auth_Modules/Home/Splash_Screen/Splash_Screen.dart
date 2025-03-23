@@ -1,6 +1,5 @@
 import 'package:fitness/Views/Auth_Modules/Sigin.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -30,7 +29,6 @@ class _SplashscreenState extends State<Splashscreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset('assets/Aniamation/Animation - 1742058310186.json'),
             SizedBox(height: 20),
             Text(
               'Welcome\nTo Fitness App!!',

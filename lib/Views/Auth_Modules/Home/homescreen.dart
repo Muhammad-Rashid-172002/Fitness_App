@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout2.dart';
 import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout3.dart';
+import 'package:fitness/Views/Auth_Modules/Home/work_outS/workout4.dart';
 import 'package:fitness/Views/Auth_Modules/Home/work_outs/workout1.dart';
 import 'package:fitness/Views/Auth_Modules/Sigin.dart';
+import 'package:fitness/Views/Auth_Modules/SignUp.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Homescreen extends StatefulWidget {
@@ -136,7 +139,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     await FirebaseAuth.instance.signOut();
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => SigninScreen()),
+      MaterialPageRoute(builder: (context) => SignupScreen()),
     );
   }
 
@@ -194,7 +197,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Column(
       children: [
         AppBar(title: Text('Profile'), backgroundColor: Colors.blue),
-        SizedBox(height: 20),
+        SizedBox(height: 50),
         Stack(
           children: [
             CircleAvatar(
@@ -252,81 +255,145 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List lists = [
-    {
-      'title': 'Fat-Burning HIIT',
-      'image': 'assets/images/images (1).jpeg',
-      'page': Workout1(),
-    },
-    {
-      'title': 'Strength Builder',
-      'image': 'assets/images/images (2).jpeg',
-      'page': Workout2(),
-    },
-    {
-      'title': 'Core & Stability',
-      'image': 'assets/images/images (3).jpeg',
-      'page': Workout3(),
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         AppBar(title: Text('Workout'), backgroundColor: Colors.blue),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 15,
-              crossAxisSpacing: 15,
-            ),
-            itemCount: 3,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => lists[index]['page'],
-                    ),
-                  );
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 138,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Image.asset(
-                          lists[index]['image'],
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        lists[index]['title'],
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+        SizedBox(height: 100),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Workout1()),
+                );
+              },
+              child: Container(
+                height: 180,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black),
                 ),
-              );
-            },
-          ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 200,
+                      child: Image.asset('assets/images/images (1).jpeg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Fat-Burning HIIT',
+                      style: GoogleFonts.acme(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(width: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Workout2()),
+                );
+              },
+              child: Container(
+                height: 180,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 200,
+                      child: Image.asset('assets/images/images (2).jpeg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Strength Builder',
+                      style: GoogleFonts.acme(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 40),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Workout3()),
+                );
+              },
+              child: Container(
+                height: 180,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 200,
+                      child: Image.asset('assets/images/images (3).jpeg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Core & Stability',
+                      style: GoogleFonts.acme(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(width: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Workout4()),
+                );
+              },
+              child: Container(
+                height: 180,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 200,
+                      child: Image.asset('assets/images/images (4).jpg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Weight Loss and Build Muscle',
+                      style: GoogleFonts.acme(fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );

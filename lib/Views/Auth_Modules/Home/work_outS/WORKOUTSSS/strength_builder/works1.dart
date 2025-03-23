@@ -2,14 +2,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class Smallworkout2 extends StatefulWidget {
-  const Smallworkout2({super.key});
+class Smallworkout extends StatefulWidget {
+  const Smallworkout({super.key});
 
   @override
-  State<Smallworkout2> createState() => _Smallworkout2State();
+  State<Smallworkout> createState() => _SmallworkoutState();
 }
 
-class _Smallworkout2State extends State<Smallworkout2> {
+class _SmallworkoutState extends State<Smallworkout> {
   int _timeLeft = 30; // Start from 30 seconds
   late Timer _timer;
 
@@ -41,7 +41,7 @@ class _Smallworkout2State extends State<Smallworkout2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pushups'),
+        title: const Text('Crunches'),
         backgroundColor: Colors.blue,
       ),
       body: Column(
@@ -50,7 +50,7 @@ class _Smallworkout2State extends State<Smallworkout2> {
             height: 361,
             width: 400,
             child: LottieBuilder.asset(
-              'assets/Aniamation/1 (3).json',
+              'assets/Aniamation/1 (1).json',
               height: 250,
             ),
           ),

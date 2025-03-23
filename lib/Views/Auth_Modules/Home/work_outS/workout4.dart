@@ -4,14 +4,14 @@ import 'package:fitness/Views/Auth_Modules/Home/work_outs/WORKOUTSSS/smallworkou
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class Workout1 extends StatefulWidget {
-  const Workout1({super.key});
+class Workout4 extends StatefulWidget {
+  const Workout4({super.key});
 
   @override
-  State<Workout1> createState() => _Workout1State();
+  State<Workout4> createState() => _Workout4State();
 }
 
-class _Workout1State extends State<Workout1> {
+class _Workout4State extends State<Workout4> {
   List lottieFiles = [
     {
       'title': 'Jumping Jack',
@@ -34,7 +34,7 @@ class _Workout1State extends State<Workout1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fat-Burning HIIT'),
+        title: const Text('Weight Loss and Build Muscle'),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
